@@ -1,0 +1,94 @@
+.invoice-box {
+    max-width: 890px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    line-height: 24px;
+    font-family: Arial, sans-serif;
+  }
+  .invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+  }
+  .invoice-box table td {
+    padding: 5px;
+    vertical-align: middle;
+  }
+  .invoice-box table tr td:nth-child(2) {
+    text-align: right;
+  }
+  .invoice-box table tr.top table td {
+    padding-bottom: 20px;
+  }
+  .invoice-box table tr.top table td.title {
+    font-size: 45px;
+    line-height: 45px;
+    color: #333;
+  }
+  .invoice-box table tr.information table td {
+    padding-bottom: 40px;
+  }
+  
+  .invoice-box table tr.heading td {
+    
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    padding: 20px 30px;
+  }
+  .invoice-box table tr.details td {
+    padding-bottom: 20px;
+  }
+  
+  .invoice-box table tr.item.last td {
+    border-bottom: none;
+  }
+  .invoice-box table tr.total td:nth-child(2) {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+  }
+  
+  .notes-section {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+  }
+  
+  .contact-section {
+    background-color: rgb(18, 90, 122);
+    background-image: linear-gradient(
+      to right,
+      rgb(18, 90, 122),
+      rgb(42, 128, 119)
+    );
+  }
+  
+  .contact-info {
+    background-color: #042739;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    .invoice-box table tr.information table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    .invoice-box {
+      max-width: 100% !important;
+      box-shadow: none;
+    }
+    
+  }
+  
+  
