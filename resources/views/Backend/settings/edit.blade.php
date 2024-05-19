@@ -38,25 +38,7 @@
                             @endif
                         </div>
 
-                        <div class="form-group mb-2">
-                            <label class="form-label">Company Last Name</label>
-                            <input class="form-control" type="text" name="company_last_name" id="companyName"
-                                placeholder="Company Last Name" id="example-search-input"
-                                value="{{@$setting->company_last_name}}">
-                            @if ($errors->has('company_last_name'))
-                            <span class="text-danger"><strong>{{ $errors->first('company_last_name') }}</strong> </span>
-                            @endif
-                        </div>
 
-                        <div class="form-group mb-2">
-                            <label class="form-label">Company Name (Bangla)</label>
-                            <input class="form-control" type="text" name="companyNameBangla"
-                                placeholder="Company Name in Bangla" id="example-search-input"
-                                value="{{ @$setting->companyNameBangla }}">
-                            @if ($errors->has('companyNameBangla'))
-                            <span class="text-danger"><strong>{{ $errors->first('companyNameBangla') }}</strong> </span>
-                            @endif
-                        </div>
 
                         <div class="form-group mb-2">
                             <label class="form-label">Email</label>
@@ -64,16 +46,6 @@
                                 id="example-search-input" value="{{ @$setting->email }}">
                             @if ($errors->has('email'))
                             <span class="text-danger"><strong>{{ $errors->first('email') }}</strong> </span>
-                            @endif
-                        </div>
-
-                        <div class="form-group mb-2">
-                            <label class="form-label">Reservation Email</label>
-                            <input class="form-control" type="email" name="reserve_email"
-                                placeholder="Reservation Email" id="example-search-input"
-                                value="{{ @$setting->reserve_email }}">
-                            @if ($errors->has('reserve_email'))
-                            <span class="text-danger"><strong>{{ $errors->first('reserve_email') }}</strong> </span>
                             @endif
                         </div>
 
@@ -93,15 +65,6 @@
                                 placeholder="Company Phone" id="example-search-input" value="{{ @$setting->phone }}">
                             @if ($errors->has('phone'))
                             <span class="text-danger"><strong>{{ $errors->first('phone') }}</strong> </span>
-                            @endif
-                        </div>
-
-                        <div class="form-group mb-2">
-                            <label class="form-label">Fax</label>
-                            <input class="form-control" type="text" maxlength="" name="fax" placeholder="Fax"
-                                id="example-search-input" value="{{ @$setting->fax }}">
-                            @if ($errors->has('fax'))
-                            <span class="text-danger"><strong>{{ $errors->first('fax') }}</strong> </span>
                             @endif
                         </div>
 
@@ -410,35 +373,6 @@
                         @endif
 
                         <div class="form-group mb-2">
-                            <label class="form-label">Sister Concern Image</label>
-                            <input class="form-control" type="file" name="sister_concern_logo">
-                            @if ($errors->has('sister_concern_logo'))
-                            <span class="text-danger"><strong>{{$errors->first('sister_concern_logo')}}</strong></span>
-                            @endif
-                        </div>
-
-                        @if(isset($setting->sister_concern_logo))
-                        <div class="mb-3">
-                            <img height="100px" width="100px" src="{{url(@$setting->sister_concern_logo)}}" alt="">
-                        </div>
-                        @endif
-
-                        <div class="form-group mb-2">
-                            <label class="form-label">Video Section Image</label>
-                            <input class="form-control" type="file" name="video_section_image">
-                            @if ($errors->has('video_section_image'))
-                            <span class="text-danger"><strong>{{ $errors->first('video_section_image') }}</strong>
-                            </span>
-                            @endif
-                        </div>
-
-                        @if(isset($setting->video_section_image))
-                        <div class="mb-3">
-                            <img height="100px" width="100px" src="{{ url(@$setting->video_section_image) }}" alt="">
-                        </div>
-                        @endif
-
-                        <div class="form-group mb-2">
                             <label class="form-label">Footer Image</label>
                             <input class="form-control" type="file" name="footer_image">
                             @if ($errors->has('footer_image'))
@@ -483,35 +417,6 @@
                         </div>
                         @endif
 
-                        <div class="form-group mb-2">
-                            <label class="form-label">Restaurent Page Background Image</label>
-                            <input class="form-control" type="file" name="restaurent_bg_image">
-                            @if ($errors->has('restaurent_bg_image'))
-                            <span class="text-danger"><strong>{{ $errors->first('restaurent_bg_image') }}</strong>
-                            </span>
-                            @endif
-                        </div>
-
-                        @if(isset($setting->restaurent_bg_image))
-                        <div class="mb-3">
-                            <img height="100px" width="100px" src="{{ url(@$setting->restaurent_bg_image)}}" alt="">
-                        </div>
-                        @endif
-
-                        <div class="form-group mb-2">
-                            <label class="form-label">Promotion Page Background Image</label>
-                            <input class="form-control" type="file" name="promotion_page_bg_image">
-                            @if ($errors->has('promotion_page_bg_image'))
-                            <span class="text-danger"><strong>{{ $errors->first('promotion_page_bg_image') }}</strong>
-                            </span>
-                            @endif
-                        </div>
-
-                        @if(isset($setting->promotion_page_bg_image))
-                        <div class="mb-3">
-                            <img height="100px" width="100px" src="{{ url(@$setting->promotion_page_bg_image)}}" alt="">
-                        </div>
-                        @endif
 
                         <div class="form-group mb-2">
                             <label class="form-label">Account Page Background Image</label>

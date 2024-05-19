@@ -15,4 +15,9 @@ class Service extends Model
     protected $fillable = [
         'title', 'description', 'image', 'status',
     ];
+
+    public function department()
+    {
+        return $this->belongsTo(Works::class, 'deptId', 'id');
+    }
 }

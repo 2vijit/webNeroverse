@@ -83,12 +83,9 @@ class SettingController extends Controller
 
         $setting = Setting::first();
         $setting->companyName = $request->companyName;
-        $setting->company_last_name = $request->company_last_name;
-        $setting->companyNameBangla = $request->companyNameBangla;
         $setting->email = $request->email;
         $setting->reserve_email = $request->reserve_email;
         $setting->phone = $request->phone;
-        $setting->phoneBangla = $request->phoneBangla;
         $setting->address = $request->address;
         $setting->footer_text = $request->footer_text;
         $setting->dhaka_office_email = $request->dhaka_office_email;

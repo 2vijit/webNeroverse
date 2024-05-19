@@ -55,9 +55,10 @@
                     {title: 'Title', data: 'title', name: 'title', className: "text-center", orderable: true, searchable: true},
                     {title: 'Description', data: 'description', name: 'description', className: "text-center", orderable: false, searchable: false},  
                     {title: 'Image', data: 'image', name: 'image', className: "text-center", orderable: false, searchable: false},
-                    {title: 'Status', data: 'status', name: 'status', className: "text-center", orderable: false, searchable: false},                
+                    {title: 'Status', data: 'status', name: 'status', className: "text-center", orderable: false, searchable: false}, 
+                    {title: 'Department', data: 'department', name: 'department', className: "text-center", orderable: false, searchable: false},               
                     {title: 'Action', className: "text-center", data: function (data) {
-                            return '<a title="edit" class="btn btn-warning btn-sm" data-panel-id="' + data.id + '" onclick="editService(this)"><i class="fas fa-edit"></i></a>'+
+                            return ''+
                                 ' <a title="delete" class="btn btn-danger btn-sm" data-panel-id="' + data.id + '" onclick="deleteService(this)"><i class="fas fa-trash"></i></a>';
                         }, orderable: false, searchable: false
                     }

@@ -68,7 +68,7 @@
                                     <a href="{{route('index')}}" class="logo logo-dark text-center">
                                         <span class="logo-lg">
                                             <img src="{{url(@$setting->logo_1)}}" alt="{{ @$setting->logo_1 }}"
-                                                height="100">
+                                                height="100" width="200">
                                         </span>
                                     </a>
 

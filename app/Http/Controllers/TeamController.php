@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
@@ -34,6 +35,7 @@ class TeamController extends Controller
                 }
                 return '<label class="btn btn-danger">Inactive</label>';
             })
+
             ->setRowAttr([
                 'align' => 'center',
             ])
@@ -108,6 +110,18 @@ class TeamController extends Controller
         $file_path_image = public_path() . '/team/' . $latestnews->image;
         File::delete($file_path_image);
         $latestnews->delete();
+        return response()->json();
+    }
+
+    public function deleteServiceImage(Request $request)
+    {
+        $service = Service::find($request->foodId);
+        if (!$service) {
+            return response()->json(['error' => 'Service not found'], 404);
+        }
+        $file_path_image = public_path() . '/service/' . $service->image;
+        File::delete($file_path_image);
+        $service->delete();
         return response()->json();
     }
 }

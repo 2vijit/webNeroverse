@@ -15,4 +15,9 @@ class Works extends Model
     protected $fillable = [
         'title', 'description', 'status',
     ];
+
+    public function services()
+    {
+        return $this->hasMany(Service::class, 'deptId', 'id');
+    }
 }

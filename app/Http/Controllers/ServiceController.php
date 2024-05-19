@@ -20,11 +20,11 @@ class ServiceController extends Controller
 
     public function list()
     {
-        $latestnews = Service::query()->get();
+        $latestnews = Service::with('department')->get();
         return datatables()->of($latestnews)
             ->addColumn('image', function (Service $latestnews) {
                 if (isset($latestnews->image)) {
-                    return '<img height="50px" width="50px" src="' . url($latestnews->image) . '" alt="">';
+                    return '<img src="' . url('public/service/' . $latestnews->image) . '" border="0" class="img-rounded" width="50px" align="center"/>';
                 }
                 return '';
             })
@@ -33,6 +33,9 @@ class ServiceController extends Controller
                     return '<label class="btn btn-success">Active</label>';
                 }
                 return '<label class="btn btn-danger">Inactive</label>';
+            })
+            ->addColumn('department', function (Service $latestnews) {
+                return $latestnews->department->title ?? 'not available';
             })
             ->setRowAttr([
                 'align' => 'center',
@@ -104,7 +107,7 @@ class ServiceController extends Controller
 
     public function delete(Request $request)
     {
-        $latestnews = Service::where('id', $request->id)->first();
+        $latestnews = Service::where('id', $request->serviceId)->first();
         $file_path_image = public_path() . '/service/' . $latestnews->image;
         File::delete($file_path_image);
         $latestnews->delete();

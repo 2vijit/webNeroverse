@@ -18,7 +18,7 @@
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Add</a></li>
                 </ol>
             </div>
-            <h4 class="page-title">Case Study</h4>
+            <h4 class="page-title">Create Case Study</h4>
         </div>
     </div>
 </div>

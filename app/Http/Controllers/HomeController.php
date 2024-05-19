@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\LatestNews;
 use App\Models\Package;
 use App\Models\Page;
 use App\Models\Reservation;
 use App\Models\Room;
+use App\Models\Service;
+use App\Models\Team;
+use App\Models\Works;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,10 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $totalRoom = Room::count();
-        // $totalPackage = Package::count();
-        // $totalReservation = Reservation::count();
-        // $totalCustomer = Customer::count();
+
         return view('frontend.pages.index');
     }
 

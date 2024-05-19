@@ -11,7 +11,7 @@ class OurGoalController extends Controller
 {
     public function show()
     {
-        return view('Backend.work.index');
+        return view('Backend.ourgoals.index');
     }
 
     public function list()
@@ -35,7 +35,7 @@ class OurGoalController extends Controller
 
     public function create()
     {
-        return view('Backend.work.create');
+        return view('Backend.ourgoals.create');
     }
 
     public function store(Request $request)

@@ -24,13 +24,12 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
                 <form class="form" action="{{ route('team.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-body">
-
                         <div class="form-group mt-2">
                             <label>Name</label>
                             <input name="name" id="" class="form-control" placeholder="Name" required>
@@ -56,12 +55,10 @@
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                             </select>
-
                             <span class="text-danger"> <b>{{ $errors->first('status') }}</b></span>
                         </div>
 
                     </div>
-
                     <div class="form-actions mt-2">
                         <a href="{{route('team.show')}}"><button type="button" class="btn btn-danger mr-1"><i
                                     class="ft-x"></i> Cancel</button></a>
