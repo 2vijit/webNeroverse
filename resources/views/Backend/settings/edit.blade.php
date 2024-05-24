@@ -39,6 +39,14 @@
                         </div>
 
 
+                        <div class="form-group mb-2">
+                            <label class="form-label">Company Document</label>
+                            <input class="form-control" type="file" name="company_document">
+                            @if ($errors->has('company_document'))
+                            <span class="text-danger"><strong>{{ $errors->first('company_document') }}</strong> </span>
+                            @endif
+                        </div>
+
 
                         <div class="form-group mb-2">
                             <label class="form-label">Email</label>

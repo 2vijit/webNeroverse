@@ -9,6 +9,7 @@ use App\Models\Page;
 use App\Models\Reservation;
 use App\Models\Room;
 use App\Models\Service;
+use App\Models\Setting;
 use App\Models\Team;
 use App\Models\Works;
 use Illuminate\Http\Request;
@@ -28,7 +29,8 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('frontend.pages.about');
+        $document = Setting::query()->first();
+        return view('frontend.pages.about', compact('document'));
     }
 
     public function service()

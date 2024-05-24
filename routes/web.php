@@ -30,6 +30,7 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/services', [HomeController::class, 'service'])->name('service');
 Route::get('/casestudy', [HomeController::class, 'casestudy'])->name('casestudy');
+Route::get('downloadPdf/{id}', [SettingController::class, 'downloadPdf'])->name('downloadPdf');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -191,35 +192,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [AboutController::class, 'update'])->name('update');
         Route::post('delete', [AboutController::class, 'delete'])->name('delete');
     });
-
-    //Reservation
-    // Route::group(['prefix' => 'reservation', 'as' => 'reservation.'], function () {
-    //     Route::get('/show', [ReservationControlller::class, 'index'])->name('show');
-    //     Route::get('/agentReservationList', [ReservationControlller::class, 'agentReservationList'])->name('agentReservationList');
-    //     Route::post('/list', [ReservationControlller::class, 'list'])->name('list');
-    //     Route::get('create', [ReservationControlller::class, 'create'])->name('create');
-    //     Route::post('store', [ReservationControlller::class, 'store'])->name('store');
-    //     Route::get('edit/{id}', [ReservationControlller::class, 'edit'])->name('edit');
-    //     Route::post('update/{id}', [ReservationControlller::class, 'update'])->name('update');
-    //     Route::post('payment', [ReservationControlller::class, 'addPayment'])->name('payment');
-    //     Route::post('save_payment', [ReservationControlller::class, 'savePayment'])->name('save_payment');
-    //     Route::post('delete', [ReservationControlller::class, 'delete'])->name('delete');
-    //     Route::post('change_payment_status', [ReservationControlller::class, 'change_payment_status'])->name('change_payment_status');
-    //     Route::get('full_calender', [ReservationControlller::class, 'fullCalender'])->name('full_calender');
-    //     Route::post('statusUpdate', [ReservationControlller::class, 'statusUpdate'])->name('statusUpdate');
-    //     Route::get('print/{id}', [ReservationControlller::class, 'print'])->name('print');
-    //     Route::get('fetch-user', [ReservationControlller::class, 'fetchUser'])->name('fetch-user');
-    //     Route::get('reservation_details/{id}', [ReservationControlller::class, 'reservation_details'])->name('reservation_details');
-    //     Route::get('advanceReservation', [ReservationControlller::class, 'advanceReservation'])->name('advanceReservation');
-    //     Route::post('approvePayment', [ReservationControlller::class, 'approvePayment'])->name('approvePayment');
-    //     Route::post('search-room', [ReservationControlller::class, 'searchRoom'])->name('search-room');
-    //     Route::get('roomdetails/{roomId}', [ReservationControlller::class, 'roomdetails'])->name('roomdetails');
-    //     Route::get('fetchData', [ReservationControlller::class, 'fetchData'])->name('fetchData');
-    //     Route::post('save-details', [ReservationControlller::class, 'saveDetails'])->name('save-details');
-    //     Route::get('findReserveInfo', [ReservationControlller::class, 'findReserveInfo'])->name('findReserveInfo');
-    // });
-
-    //Report 
 
     Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
         Route::get('/show', [ReportController::class, 'index'])->name('show');

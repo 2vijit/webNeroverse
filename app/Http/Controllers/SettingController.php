@@ -81,6 +81,8 @@ class SettingController extends Controller
             'logo_2' => 'nullable|image|mimes:jpeg,png,jpg',
         ]);
 
+
+
         $setting = Setting::first();
         $setting->companyName = $request->companyName;
         $setting->email = $request->email;
@@ -89,7 +91,6 @@ class SettingController extends Controller
         $setting->address = $request->address;
         $setting->footer_text = $request->footer_text;
         $setting->dhaka_office_email = $request->dhaka_office_email;
-        $setting->addressBangla = $request->addressBangla;
         $setting->logo_1_alt_tag = $request->logo_1_alt_tag;
         $setting->logo_2_alt_tag = $request->logo_2_alt_tag;
         $setting->facebook = $request->facebook;
@@ -99,7 +100,7 @@ class SettingController extends Controller
         $setting->our_best_text = $request->our_best_text;
         $setting->accomodation_text = $request->accomodation_text;
         $setting->contact_page_text = $request->contact_page_text;
-        $setting->fax = $request->fax;
+
         $setting->google_map_link = $request->google_map_link;
         $setting->home_banner_small_text = $request->home_banner_small_text;
         $setting->home_banner_large_text = $request->home_banner_large_text;
@@ -168,9 +169,49 @@ class SettingController extends Controller
             $setting->sister_concern_logo = $this->save_image('settingImage', $request->file('sister_concern_logo'));
         }
 
+        if ($request->hasFile('company_document')) {
+            $file = $request->file('company_document');
+
+            if ($file->isValid()) {
+                // Generate a unique filename
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+
+                // Move the file to the desired location
+                $file->move(public_path('settingImage'), $filename);
+
+                // Save the file path to the database
+
+                $setting->company_document = $filename;
+                $setting->save();
+            }
+        }
+
+
+
         $setting->save();
 
         Session::flash('success', 'Settings Updated Successfully');
         return redirect()->route('setting.show');
+    }
+
+
+    public function downloadPdf($id)
+    {
+        // Retrieve the document from the database
+        $document = Setting::findOrFail($id);
+
+        // Get the file path
+        $filePath = public_path('settingImage/' . $document->company_document);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404, 'File not found');
+        }
+
+        // Read the file contents
+        $fileContents = file_get_contents($filePath);
+
+        // Return the file contents in the response
+        return response($fileContents)->header('Content-Type', 'application/pdf');
     }
 }
