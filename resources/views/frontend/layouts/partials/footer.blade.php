@@ -4,13 +4,13 @@
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="{{asset('public/frontend/assets/img/footerLogo.png')}}" />
             </a>
-            <p>
+            <p class="">
                 Neuroverse ensures delivering high-quality solutions across vast
                 domains to achieve business goals.
             </p>
         </div>
 
-        <div class="col-lg-4 col-6 footer-links">
+        <div class="col-lg-6 col-7 footer-links">
             <div class="inputdiv">
                 <input type="text" />
                 <button>

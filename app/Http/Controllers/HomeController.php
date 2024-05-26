@@ -43,6 +43,11 @@ class HomeController extends Controller
         return view('frontend.pages.casestudy');
     }
 
+    public function contact()
+    {
+        return view('frontend.pages.contact');
+    }
+
     // public function page($pageId)
     // {
     //     $page = Page::query()->where('pageId', $pageId)->first();

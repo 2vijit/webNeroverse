@@ -30,6 +30,7 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/services', [HomeController::class, 'service'])->name('service');
 Route::get('/casestudy', [HomeController::class, 'casestudy'])->name('casestudy');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('downloadPdf/{id}', [SettingController::class, 'downloadPdf'])->name('downloadPdf');
 
 Route::group(['middleware' => 'auth'], function () {

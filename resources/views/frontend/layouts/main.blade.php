@@ -21,11 +21,12 @@
 
                     <li><a href="{{ route('service') }}">Services</a></li>
                     <li><a href="{{ route('casestudy') }}" class="active">Case Study</a></li>
-                    <li><a href="{{ route('login') }}" class="active">Login</a></li>
+                   
+                   
                 </ul>
             </nav>
             <li class="navbar">
-                <a class="get-a-quote" href="get-a-quote.html">
+                <a class="get-a-quote" href="{{route('contact')}}">
                     <span> Contact Us </span>
                 </a>
             </li>

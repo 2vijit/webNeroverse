@@ -370,8 +370,8 @@ class ComposerStaticInit3ae206a0b6edc2e13160ce4d719574d4
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -653,6 +653,7 @@ class ComposerStaticInit3ae206a0b6edc2e13160ce4d719574d4
         'App\\Models\\Service' => __DIR__ . '/../..' . '/app/Models/Service.php',
         'App\\Models\\Setting' => __DIR__ . '/../..' . '/app/Models/Setting.php',
         'App\\Models\\Team' => __DIR__ . '/../..' . '/app/Models/Team.php',
+        'App\\Models\\Test' => __DIR__ . '/../..' . '/app/Models/Test.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\UserType' => __DIR__ . '/../..' . '/app/Models/UserType.php',
         'App\\Models\\Works' => __DIR__ . '/../..' . '/app/Models/Works.php',
