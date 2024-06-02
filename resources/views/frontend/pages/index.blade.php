@@ -8,7 +8,7 @@
 </style>
 @endsection
 @section('main.content')
-<section id="hero" class="hero d-flex align-items-center">
+<section id="hero" class="hero  d-flex align-items-center">
 
     <img data-aos="fade-up" src="{{ asset('public/frontend/assets/img/Ellipse 4.png') }}" alt="" class="circleCenter"
         style="top:2%">
@@ -19,7 +19,7 @@
     <div class="">
         <div class="row gy-4 d-flex justify-content-between index-title">
             <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center header-text">
-                <h2 data-aos="fade-up" class="px-4">Let's Elevate Your Business</h2>
+                <h2 data-aos="fade-up" class="px-md-4">Let's Elevate Your Business</h2>
                 <p data-aos="fade-up" data-aos-delay="100" class="px-4">
                     We work Professionally and Globally.
                 </p>

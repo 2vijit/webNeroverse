@@ -54,6 +54,8 @@ class HomeController extends Controller
     //     return view('pages.page', compact('page'));
     // }
 
-
-
+    public function pricing()
+    {
+        return view('frontend.pages.pricing');
+    }
 }

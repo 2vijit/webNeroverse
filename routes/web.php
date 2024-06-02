@@ -19,6 +19,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OurGoalController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
@@ -31,6 +32,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/services', [HomeController::class, 'service'])->name('service');
 Route::get('/casestudy', [HomeController::class, 'casestudy'])->name('casestudy');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/pricing', [HomeController::class, 'pricing'])->name('pricing');
 Route::get('downloadPdf/{id}', [SettingController::class, 'downloadPdf'])->name('downloadPdf');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -133,43 +135,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('delete', [ServiceController::class, 'delete'])->name('delete');
     });
 
-    //Room
-    Route::group(['prefix' => 'room', 'as' => 'room.'], function () {
-        Route::get('/show', [RoomController::class, 'show'])->name('show');
-        Route::post('/list', [RoomController::class, 'list'])->name('list');
-        Route::get('create', [RoomController::class, 'create'])->name('create');
-        Route::post('store', [RoomController::class, 'store'])->name('store');
-        Route::get('edit/{id}', [RoomController::class, 'edit'])->name('edit');
-        Route::post('update/{id}', [RoomController::class, 'update'])->name('update');
-        Route::post('delete', [RoomController::class, 'delete'])->name('delete');
-    });
-
-
-
-
-    //Food
-    Route::group(['prefix' => 'food', 'as' => 'food.'], function () {
-        Route::get('/show', [FoodController::class, 'show'])->name('show');
-        Route::post('/list', [FoodController::class, 'list'])->name('list');
-        Route::get('create', [FoodController::class, 'create'])->name('create');
-        Route::post('store', [FoodController::class, 'store'])->name('store');
-        Route::get('edit/{id}', [FoodController::class, 'edit'])->name('edit');
-        Route::post('update/{id}', [FoodController::class, 'update'])->name('update');
-        Route::post('delete', [FoodController::class, 'delete'])->name('delete');
-        Route::post('deleteFood', [FoodController::class, 'deleteFood'])->name('deleteFood');
-    });
-
-    //Gallery
-    Route::group(['prefix' => 'gallery', 'as' => 'gallery.'], function () {
-        Route::get('/show', [GalleryController::class, 'show'])->name('show');
-        Route::post('/list', [GalleryController::class, 'list'])->name('list');
-        Route::get('create', [GalleryController::class, 'create'])->name('create');
-        Route::post('store', [GalleryController::class, 'store'])->name('store');
-        Route::get('edit/{id}', [GalleryController::class, 'edit'])->name('edit');
-        Route::post('update/{id}', [GalleryController::class, 'update'])->name('update');
-        Route::post('delete', [GalleryController::class, 'delete'])->name('delete');
-        Route::post('deleteGalleryImage', [GalleryController::class, 'deleteGalleryImage'])->name('deleteGalleryImage');
-    });
 
     //Contact
     Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
@@ -194,16 +159,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('delete', [AboutController::class, 'delete'])->name('delete');
     });
 
-    Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
-        Route::get('/show', [ReportController::class, 'index'])->name('show');
-        Route::post('/list', [ReportController::class, 'list'])->name('list');
-        Route::get('create', [MenuController::class, 'create'])->name('create');
-        Route::post('store', [MenuController::class, 'store'])->name('store');
-        Route::get('edit/{id}', [MenuController::class, 'edit'])->name('edit');
-        Route::post('update/{id}', [MenuController::class, 'update'])->name('update');
-        Route::post('delete', [MenuController::class, 'delete'])->name('delete');
-        Route::post('check-parent-type', [MenuController::class, 'checkParentType'])->name('checkParentType');
+
+    //About
+    Route::group(['prefix' => 'pricing', 'as' => 'pricing.'], function () {
+        Route::get('/show', [PricingController::class, 'index'])->name('show');
+        Route::post('/list', [PricingController::class, 'list'])->name('list');
+        Route::get('create', [PricingController::class, 'create'])->name('create');
+        Route::post('store', [PricingController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [PricingController::class, 'edit'])->name('edit');
+        Route::post('update/{id}', [PricingController::class, 'update'])->name('update');
+        Route::post('delete', [PricingController::class, 'delete'])->name('delete');
     });
+
 
     //Menu
     Route::group(['prefix' => 'menu', 'as' => 'menu.'], function () {
@@ -230,17 +197,6 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     //Banner
-    // Route::group(['prefix' => 'banner', 'as' => 'banner.'], function () {
-    //     Route::get('/show', [BannerController::class, 'index'])->name('show');
-    //     Route::post('/list', [BannerController::class, 'list'])->name('list');
-    //     Route::get('create', [BannerController::class, 'create'])->name('create');
-    //     Route::post('store', [BannerController::class, 'store'])->name('store');
-    //     Route::get('edit/{id}', [BannerController::class, 'edit'])->name('edit');
-    //     Route::post('update/{id}', [BannerController::class, 'update'])->name('update');
-    //     Route::post('delete', [BannerController::class, 'delete'])->name('delete');
-    // });
-
-    //Banner
     Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
         Route::get('/show', [ContactController::class, 'show'])->name('show');
         Route::post('/list', [ContactController::class, 'list'])->name('list');
@@ -257,38 +213,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/update_profile/{id}', [UserController::class, 'update_profile'])->name('update_profile');
     });
 
-    //Report
-    // Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
-    //     Route::get('/show', [ReportController::class, 'show'])->name('show');
-    //     Route::post('/list', [ReportController::class, 'list'])->name('list');
-    //     Route::get('create', [ReportController::class, 'create'])->name('create');
-    //     Route::post('store', [ReportController::class, 'store'])->name('store');
-    //     Route::get('edit/{id}', [ReportController::class, 'edit'])->name('edit');
-    //     Route::post('update/{id}', [ReportController::class, 'update'])->name('update');
-    //     Route::post('delete', [ReportController::class, 'delete'])->name('delete');
-    // });
 
-    //Customer
-    // Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
-    //     Route::get('/show', [CustomerController::class, 'show'])->name('show');
-    //     Route::post('/list', [CustomerController::class, 'list'])->name('list');
-    //     Route::get('create', [ReportController::class, 'create'])->name('create');
-    //     Route::post('store', [ReportController::class, 'store'])->name('store');
-    //     Route::get('edit/{id}', [ReportController::class, 'edit'])->name('edit');
-    //     Route::post('update/{id}', [ReportController::class, 'update'])->name('update');
-    //     Route::post('delete', [ReportController::class, 'delete'])->name('delete');
-    // });
 
-    //Customer
-    // Route::group(['prefix' => 'agent', 'as' => 'agent.'], function () {
-    //     Route::get('/show', [AgentController::class, 'show'])->name('show');
-    //     Route::post('/list', [AgentController::class, 'list'])->name('list');
-    //     Route::get('create', [AgentController::class, 'create'])->name('create');
-    //     Route::post('store', [AgentController::class, 'store'])->name('store');
-    //     Route::get('edit/{id}', [AgentController::class, 'edit'])->name('edit');
-    //     Route::post('update/{id}', [AgentController::class, 'update'])->name('update');
-    //     Route::post('delete', [AgentController::class, 'delete'])->name('delete');
-    // });
 
     // Route::get('/page/{id}', [HomeController::class, 'page'])->name('page');
 

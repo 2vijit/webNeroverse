@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title'){{ 'Department' }}@endsection
+@section('title')
+{{ 'Department' }}
+@endsection
 @section('header.css')
 <style>
     html body .content .content-wrapper {
@@ -95,7 +97,7 @@
                     </div>
 
                     <div class="form-actions mt-2">
-                        <a href="{{route('department.show')}}"><button type="button" class="btn btn-danger mr-1"><i
+                        <a href="{{ route('department.show') }}"><button type="button" class="btn btn-danger mr-1"><i
                                     class="ft-x"></i> Cancel</button></a>
                         <button type="submit" class="btn btn-primary"><i class="la la-check-square-o"></i>
                             Create</button>
@@ -110,12 +112,12 @@
 
 @section('footer.js')
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-   const addButton = document.getElementById("add-button");
-   const removeButton = document.getElementById("remove-button");
-   addButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
-       var newRow = `
+    document.addEventListener("DOMContentLoaded", function() {
+            const addButton = document.getElementById("add-button");
+            const removeButton = document.getElementById("remove-button");
+            addButton.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent form submission
+                var newRow = `
        <div class="multi-service">
                             <div class="form-group mb-2">
                                 <label class="form-label">Service Title</label>
@@ -147,21 +149,19 @@
                             </div>                          
                         </div>
        `;
-       var newRowContainer = document.createElement("div");
-       newRowContainer.innerHTML = newRow;
-       var addButtonContainer = document.querySelector('.add_remove_button');
-       addButtonContainer.insertAdjacentElement("beforebegin", newRowContainer);
-   });
+                var newRowContainer = document.createElement("div");
+                newRowContainer.innerHTML = newRow;
+                var addButtonContainer = document.querySelector('.add_remove_button');
+                addButtonContainer.insertAdjacentElement("beforebegin", newRowContainer);
+            });
 
-   removeButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
-       var packageItinerariesRow = document.querySelectorAll(".multi-service");
-       if (packageItinerariesRow.length > 0) {               
-           packageItinerariesRow[packageItinerariesRow.length - 1].remove();
-       }
-   });
-});
-
+            removeButton.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent form submission
+                var packageItinerariesRow = document.querySelectorAll(".multi-service");
+                if (packageItinerariesRow.length > 0) {
+                    packageItinerariesRow[packageItinerariesRow.length - 1].remove();
+                }
+            });
+        });
 </script>
-
 @endsection

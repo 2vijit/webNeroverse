@@ -1,44 +1,68 @@
+<!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
-    <div class="container footerContainer">
-        <div class="footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="{{asset('public/frontend/assets/img/footerLogo.png')}}" />
-            </a>
-            <p class="">
-                Neuroverse ensures delivering high-quality solutions across vast
-                domains to achieve business goals.
-            </p>
-        </div>
 
-        <div class="col-lg-6 col-7 footer-links">
-            <div class="inputdiv">
-                <input type="text" />
-                <button>
-                    <img src="{{asset('public/frontend/assets/img/send.png')}}">
-                </button>
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-info">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span>Logis</span>
+                </a>
+                <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
+                    darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                <div class="social-links d-flex mt-4">
+                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
             </div>
-            <nav class="nav">
-                <a class="nav-link" href="#">Home</a>
-                <a class="nav-link" href="#">About us</a>
-                <a class="nav-link" href="#">Services</a>
-                <a class="nav-link" href="#">Case Study</a>
-            </nav>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Product Management</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">Graphic Design</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4>Contact Us</h4>
+                <p>
+                    A108 Adam Street <br>
+                    New York, NY 535022<br>
+                    United States <br><br>
+                    <strong>Phone:</strong> +1 5589 55488 55<br>
+                    <strong>Email:</strong> info@example.com<br>
+                </p>
+
+            </div>
+
         </div>
     </div>
 
-    <hr class="styled-divider">
-
-    <div class="parent-container">
-        <div class="start-div">
-            <a href="">Privacy & Policy</a>
-            <a href="">Terms Condition</a>
+    <div class="container mt-4">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Logis</span></strong>. All Rights Reserved
         </div>
-        <div class="end-div">
-            Copyright © 2023. All rights reserved
+        <div class="credits">
+
+            Designed by <a href="https://bootstrapmade.com/">Neuroverse</a>
         </div>
     </div>
-</footer>
 
-<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-<div id="preloader"></div>
+</footer><!-- End Footer -->
+<!-- End Footer -->

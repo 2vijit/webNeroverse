@@ -61,6 +61,14 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('pricing.show') }}">
+                        <i data-feather="message-square"></i>
+                        <span> Pricing </span>
+                    </a>
+                </li>
+
+
 
 
 
